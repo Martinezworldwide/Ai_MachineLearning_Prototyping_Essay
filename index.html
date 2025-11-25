@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FitnessHighlighter Essay</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px auto;
+            max-width: 900px;
+            padding: 0 20px;
+            background: #f8f8f8;
+            color: #222;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+        }
+        article {
+            background: #fff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>FitnessHighlighter Essay</h1>
+    <article>
+<p><strong>FitnessHighlighter</strong> is an early-stage experimental AI-powered video analysis platform designed to transform raw exercise footage into polished, edited training videos by learning from high-quality examples provided by the user. The vision behind the system is to automate the tedious process of editing sports and fitness videos—detecting target exercises, removing irrelevant content, and replicating a user’s personal editing style. Although the system contains an advanced architectural foundation, it is important to emphasize that <strong>no current strategy consistently works</strong>, and the platform remains a research and prototyping project rather than a fully functioning product.</p>
+
+<p>The system attempts to classify four key exercises—jump rope, sprinting, ball kicking, and ball juggling—while filtering out unrelated content and constructing automatic edits. To support this goal, FitnessHighlighter uses PostgreSQL to store learned editing patterns, React and TypeScript for the frontend interface, Node.js and Express for backend coordination, and FFmpeg for video analysis and H.264 processing. While FFmpeg provides motion detection, scene analysis, and audio energy measurements, it is <strong>not superior to deep‑learning approaches</strong>, and in many cases fails to provide the accuracy needed for precise, reliable exercise recognition. Its current usage is a fallback technique rather than a validated improvement.</p>
+
+<p>The project’s development has involved extensive experimentation with a wide range of AI and computer vision models—most of which were ultimately unsuccessful. For example, static frame‑by‑frame analysis using Anthropic Claude Sonnet 4 proved slow, expensive, and unable to capture motion patterns over time. Pose‑estimation methods such as MediaPipe BlazePose and OpenPose introduced complexity without improving classification accuracy. Object detection via YOLOv8 could locate people in a frame but could not differentiate exercises. More advanced deep‑learning approaches—including VideoMAE, SlowFast, and X3D—failed to outperform simpler heuristics and were too computationally heavy. Even ensemble systems using Random Forest, SVMs, and neural networks added latency without meaningful gains. Synthetic training video generation also proved ineffective, as simulated movements did not match real‑world conditions.</p>
+
+<p>Several proposed techniques were intentionally not implemented due to expected limitations. Models such as OpenAI CLIP, ST‑GCN, TimeSformer, and Motionformer were considered but ultimately dismissed because they required infrastructure that was already removed or offered minimal expected accuracy benefits relative to their computational cost.</p>
+
+<p>These experiments led to a set of key insights about the current state of the project. First, <strong>simpler approaches do not guarantee better performance</strong>—the FFmpeg‑based method was not an improvement but simply the least problematic of the unsuccessful attempts. Second, higher confidence and quality thresholds improved filtering somewhat, but not enough to achieve production reliability. Third, real training videos were more helpful than synthetic ones, though even real data did not enable consistent classification performance. Finally, exercise‑specific logic showed promise but still failed to produce stable or accurate results across diverse videos.</p>
+
+<p>FitnessHighlighter should therefore be understood as a <strong>research and experimental prototype</strong>, not a polished product. It represents ongoing exploration into editing‑style learning, exercise recognition, and automated video processing—an attempt to understand how AI and video analysis techniques might one day converge to produce professional‑quality training content from raw footage. While none of the existing strategies have succeeded, the project remains a valuable learning tool for understanding the challenges of computer vision, motion analysis, and automated editing in real‑world conditions.</p>
+    </article>
+</body>
+</html>
